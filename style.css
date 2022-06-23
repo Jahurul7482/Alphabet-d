@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+body{
+    overflow: hidden;
+}
+.container{
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+    margin: auto;
+    top: 5vh;
+    /* background-image: conic-gradient(at 50% 90%, rgba(255, 0, 0, 0.1), rgba(255, 255, 0, 0.1), rgba(255, 255, 0, 0.1), rgba(135, 207, 235, 0.1), rgba(135, 207, 235, 0.1),rgba(255, 0, 0, 0.1)); */
+    margin: auto;
+    animation: full 2s 1 4s;
+    /* overflow: hidden; */
+}
+.container svg{
+    position: absolute;
+    top: calc(90vh/2 - 80vh/2);
+    left: calc(90vw/2 - 80vh/2);
+    background-color: transparent;
+}
+.container svg.top{
+    fill: url(#grad3);
+    clip-path: polygon(50% 50%, 100% 0, 0 0);
+    transform: rotate(2deg);
+    animation: top 4s ;
+}
+.container svg.bottom{
+    fill: url(#grad3);
+    clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+    transform: rotate(-2deg);
+    animation: bottom 4s ;
+}
+.container svg.left{
+    fill: url(#grad3);
+    clip-path: polygon(50% 50%, 0% 100%, 0 0);
+    animation: left 4s ;
+}
+.container svg.right{
+    fill: url(#grad3);
+    /* background-color: black; */
+    clip-path: polygon(100% 0, 100% 100%, 50% 50%, 100% 0);
+    animation: right 4s;
+}
+
+@keyframes top {
+    0%,
+    10%{
+        transform: translateY(-100vh);
+    }
+    90%{
+        transform: rotate(0deg) scale(0.95);
+    }
+    100%{
+        transform: rotate(2deg);
+    }
+}
+@keyframes bottom {
+    0%,
+    10%{
+        transform: translateY(100vh);
+    }
+    90%{
+        transform: rotate(0deg) scale(0.95);
+    }
+    100%{
+        transform: rotate(-2deg);
+    }
+}
+@keyframes left {
+    0%,
+    10%{
+        transform: translateX(-100vh);
+    }
+    90%{
+        transform: rotate(0deg) scale(0.95);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes right {
+    0%,
+    10%{
+        transform: translateX(100vh);
+    }
+    90%{
+        transform: rotate(0deg) scale(0.95);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes full {
+    20%{
+        transform: rotate(10deg);
+    }
+    60%{
+        transform: rotate(-10deg);
+    }
+    90%{
+        transform: rotate(0deg) scale(0.95);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
